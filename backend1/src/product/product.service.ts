@@ -27,7 +27,7 @@ export class ProductService {
     if ( !product ) {
       throw new HttpException("Product not found", HttpStatus.NOT_FOUND);
     }
-    return this.productRepository.findOneBy({ id });
+    return product;
   }
 
   async update(id: number, updateProductDto: UpdateProductDto): Promise<{
